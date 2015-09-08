@@ -7,12 +7,17 @@ var factorial = function(number) {
   }
 
   return result;
-
 };
 
 
 $(document).ready(function() {
-  
+  $("form#factorial").submit(function(event) {
+    var number = parseInt($("input#number").val());
 
+    var total = factorial(number);
+    $(".factorialized").text(total);
 
+    event.preventDefault();
+
+  });
 });
